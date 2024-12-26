@@ -18,18 +18,10 @@ func printSum() {
 
 func sum(arr []int) int {
 	// Base cases
-	switch len(arr) {
-	case 0:
+	if len(arr) == 0 {
 		return 0
-	case 1:
-		return arr[0]
 	}
 
-	var tempArr []int
-
-	first := arr[0]
-	tempArr = append(tempArr, arr[1:]...)
-
 	// Recursive case
-	return first + sum(tempArr)
+	return arr[0] + sum(arr[1:])
 }
